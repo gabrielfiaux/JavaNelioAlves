@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ValidaEntrada {
     public static int validaEntrada(int n) {
+
         Scanner scanner = new Scanner(System.in);
         while (true) {
             n = scanner.nextInt();
