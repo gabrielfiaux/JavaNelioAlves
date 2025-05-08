@@ -17,9 +17,9 @@ public class Main {
         boolean k = true;
         int room;
         Customer[] customers = new Customer[9];
-        for (int i = 0; i < customers.length; i++) {
+       /* for (int i = 0; i < customers.length; i++) {
             customers[i] = new Customer(i);
-        }
+        }*/
 
         System.out.println("Sistema Hotel");
         while (k) {
@@ -52,11 +52,12 @@ public class Main {
                     break;
                 case 3:
                     for (Customer customer : customers) {
+                        if(customer != null){
                         System.out.println();
                         System.out.println("Quarto: " + customer.getRoom());
                         System.out.println("Nome: " + customer.getName());
                         System.out.println("E-mail: " + customer.getEmail());
-                        System.out.println();
+                        System.out.println();}
                     }
                     break;
                 case 4:
