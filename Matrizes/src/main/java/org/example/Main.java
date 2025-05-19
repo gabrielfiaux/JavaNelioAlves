@@ -8,6 +8,8 @@ public class Main {
         int[][] matriz;
         int m;
         int n;
+        int negativos = 0;
+        int foco;
         System.out.println("Digite m:");
         m = sc.nextInt();
         System.out.println("Digite n:");
@@ -21,15 +23,51 @@ public class Main {
             }
         }
 
-        for (int[] row: matriz){
+        for (int[] row : matriz) {
             System.out.println();
-            for (int table: row){
+            for (int table : row) {
                 System.out.print(table);
             }
         }
 
+        for (int[] row : matriz) {
+
+            for (int table : row) {
+                if (table < 0) {
+                    negativos++;
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Numero negativos: " + negativos);
+        System.out.println();
+        System.out.println("Digite o numero foco");
+
+        foco = sc.nextInt();
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int ii = 0; ii < matriz[i].length; ii++) {
+
+                if (foco == matriz[i][ii]) {
+                    System.out.println("Posição:" + i + "," + ii);
+                    if (i > 0) {
+                        System.out.println("Numero a cima :" + matriz[i - 1][ii]);
+                    }
+                    if (i < matriz.length - 1) {
+                        System.out.println("Numero abaixo: " + matriz[i + 1][ii]);
+                    }
+
+                    if (ii > 0) {
+                        System.out.println("Numero a esquerda: " + matriz[i][ii - 1]);
+                    }
+
+                    if (ii < matriz[i].length - 1) {
+                        System.out.println("Numero a direita: "+ matriz[i][ii+1]);
+                    }
 
 
-
+                }
+            }
+        }
     }
 }
