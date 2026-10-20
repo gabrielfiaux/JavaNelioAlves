@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>SomaVetor.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SomaVetor.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">exerciciosdefixacao05vetores.src;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">SomaVetor {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+        <span class="s0">int </span><span class="s1">n = </span><span class="s2">0</span><span class="s1">;</span>
+        <span class="s0">float</span><span class="s1">[] v;</span>
+        <span class="s0">float </span><span class="s1">sum = </span><span class="s2">0</span><span class="s1">;</span>
+        <span class="s0">float </span><span class="s1">med = </span><span class="s2">0</span><span class="s1">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Quantos numeros você vai digitar?&quot;</span><span class="s1">);</span>
+        <span class="s0">while </span><span class="s1">(</span><span class="s0">true</span><span class="s1">) {</span>
+            <span class="s1">n = scanner.nextInt();</span>
+            <span class="s0">if </span><span class="s1">(n &lt; </span><span class="s2">0</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Sómente numeros maiores que 0&quot;</span><span class="s1">);</span>
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s0">break</span><span class="s1">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s1">v = </span><span class="s0">new float</span><span class="s1">[n];</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s1">; i &lt; v.length; i++) {</span>
+            <span class="s1">System.out.print(</span><span class="s3">&quot;Digite um numero:&quot;</span><span class="s1">);</span>
+            <span class="s1">n = scanner.nextInt();</span>
+            <span class="s1">v[i] = n;</span>
+
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.println();</span>
+        <span class="s1">System.out.print(</span><span class="s3">&quot;VALORES =&quot;</span><span class="s1">);</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s1">; i &lt; v.length; i++) {</span>
+            <span class="s0">if </span><span class="s1">(i+</span><span class="s2">1 </span><span class="s1">== v.length) {</span>
+                <span class="s1">System.out.print(</span><span class="s3">&quot; &quot; </span><span class="s1">+ v[i]);</span>
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s1">System.out.print(</span><span class="s3">&quot; &quot; </span><span class="s1">+ v[i] + </span><span class="s3">&quot;,&quot;</span><span class="s1">);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println();</span>
+        <span class="s1">System.out.print(</span><span class="s3">&quot;SOMA =&quot;</span><span class="s1">);</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s1">; i &lt; v.length; i++) {</span>
+            <span class="s1">sum += v[i];</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.print(</span><span class="s3">&quot; &quot; </span><span class="s1">+ sum);</span>
+        <span class="s1">med = sum / n;</span>
+        <span class="s1">System.out.println();</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;MEDIA = &quot; </span><span class="s1">+ med);</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Negativos.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #1750eb;}
+.s3 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Negativos.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">exerciciosdefixacao05vetores.src;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">Negativos {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+        <span class="s0">int </span><span class="s1">n = </span><span class="s2">0</span><span class="s1">;</span>
+        <span class="s0">int</span><span class="s1">[] a;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Este programa le numeros e restorna os negativos&quot;</span><span class="s1">);</span>
+        <span class="s0">while </span><span class="s1">(</span><span class="s0">true</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Quantos numeros deseja digitar?&quot;</span><span class="s1">);</span>
+            <span class="s1">n = scanner.nextInt();</span>
+            <span class="s0">if </span><span class="s1">(n &gt; </span><span class="s2">10 </span><span class="s1">|| n &lt;= </span><span class="s2">0</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;no maximo 10 numeros por vez, no minimo 1&quot;</span><span class="s1">);</span>
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s0">break</span><span class="s1">;</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Digite &quot; </span><span class="s1">+ n + </span><span class="s3">&quot; numeros.&quot;</span><span class="s1">);</span>
+        <span class="s1">a = </span><span class="s0">new int</span><span class="s1">[n];</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s1">; i &lt; a.length; i++) {</span>
+            <span class="s1">n = scanner.nextInt();</span>
+            <span class="s1">a[i] = n;</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;NUMEROS NEGATIVOS:&quot;</span><span class="s1">);</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s1">; i &lt; a.length; i++) {</span>
+            <span class="s0">if </span><span class="s1">(a[i] &lt; </span><span class="s2">0</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(a[i]);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
