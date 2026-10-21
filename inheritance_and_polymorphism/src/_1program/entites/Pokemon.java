@@ -75,6 +75,10 @@ public class Pokemon {
                 ", lived=" + isLive +
                 '}';
     }
+
+    // faz alguma coisa só na subclasse
+    public void Roar(){
+    }
 }
 
 

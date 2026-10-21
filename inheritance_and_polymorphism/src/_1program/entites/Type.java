@@ -4,5 +4,6 @@ public enum Type {
     FIRE,
     PLANT,
     ELETRIC,
-    WATER
+    WATER,
+    FLYING
 }

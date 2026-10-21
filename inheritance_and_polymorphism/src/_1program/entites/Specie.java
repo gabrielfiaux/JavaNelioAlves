@@ -4,5 +4,7 @@ public enum Specie {
     CHARMANDER,
     BULBASAUR,
     SQUIRTLE,
-    PIKACHU
+    PIKACHU,
+
+    CHARMELEON
 }
