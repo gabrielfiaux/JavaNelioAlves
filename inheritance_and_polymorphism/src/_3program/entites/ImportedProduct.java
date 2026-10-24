@@ -5,7 +5,7 @@ import com.sun.jdi.DoubleValue;
 import java.util.Locale;
 
 public class ImportedProduct extends Product {
-    private Double customsFee;
+ private Double customsFee;
 
     public ImportedProduct(String name, Double price, Double customsFee) {
         super(name, price);
@@ -22,10 +22,10 @@ public class ImportedProduct extends Product {
 
     @Override
     public String priceTag() {
-        return (getName() + " $ " + (String.format(Locale.US, "%.2f", totalPrice()) + " (Customs fee: $ " + String.format(Locale.US, "%2.f", customsFee + ")")));
+        return getName() +" $ "+(String.format(Locale.US,"%.2f", getPrice()) +" (Customs fee: $ "+String.format(Locale.US,"%2.f", customsFee+")") ;
     }
 
-    public Double totalPrice() {
+    public Double totalPrice(){
         return getPrice() + getCustomsFee();
     }
 }
