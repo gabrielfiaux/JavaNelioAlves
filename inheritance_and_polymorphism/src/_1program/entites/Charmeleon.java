@@ -14,4 +14,9 @@ public class Charmeleon extends Charmander {
         this.name = "Charmeleon";
         this.specie = Specie.CHARMELEON;
     }
+
+    @Override
+    public void Roar() {
+        System.out.println("Charmeleon");
+    }
 }

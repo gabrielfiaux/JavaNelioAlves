@@ -6,5 +6,6 @@ public enum Specie {
     SQUIRTLE,
     PIKACHU,
 
-    CHARMELEON
+    CHARMELEON,
+    CHARIZARD
 }
