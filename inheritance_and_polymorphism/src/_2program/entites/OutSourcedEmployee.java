@@ -16,8 +16,5 @@ public class OutSourcedEmployee extends Employee {
         this.adicionalCharge = adicionalCharge;
     }
 
-    @Override
-    public double payment() {
-        return salary() + getAdicionalCharge();
-    }
+
 }
