@@ -1,6 +1,6 @@
 package _1program.entites;
 
-public class Pokemon {
+public abstract class Pokemon {
     Specie specie;
     Type type;
     Type type2;
