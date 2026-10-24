@@ -25,6 +25,9 @@ public abstract class Pessoa {
         this.rendaAnual = rendaAnual;
     }
 
-    public abstract String sumarioDeImposto();
+    public String sumarioDeImposto() {
+        return getNome() + ": $ " + String.format("%.2f", impostoAPagar());
+    }
+
     public abstract Double impostoAPagar();
 }

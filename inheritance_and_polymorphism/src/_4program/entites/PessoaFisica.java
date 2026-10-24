@@ -45,6 +45,6 @@ public class PessoaFisica extends Pessoa {
 
     @Override
     public String sumarioDeImposto() {
-        return getNome() + ": $ " + impostoAPagar();
+        return super.sumarioDeImposto();
     }
 }
