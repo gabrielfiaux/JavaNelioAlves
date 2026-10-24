@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class UsedProduct extends Product {
-    private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
     private Date manufacturedDate;
 
     public UsedProduct(String name, Double price, Date manufacturedDate) {
@@ -23,10 +23,14 @@ public class UsedProduct extends Product {
     }
 
 
-
     @Override
     public String priceTag() {
-        return (getName() + "(Used)" + " $ " + (String.format(Locale.US, "%.2f", getPrice()))
-                + String.format(" (Manufactured Date: "+dateFormat.format(getManufacturedDate())));
+        return getName()
+                + " (Used)"
+                + " $ "
+                + String.format(Locale.US, "%.2f", getPrice())
+                + String.format(" (Manufactured Date: "
+                + dateFormat.format(getManufacturedDate()))
+                + ")";
     }
 }
