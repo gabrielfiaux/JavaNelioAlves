@@ -16,7 +16,7 @@ public class Main {
     public static void main() throws ParseException {
         // Cria um formatador que reconhece datas escritas
         // como dia/mês/ano.
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 
 
         Scanner scanner = new Scanner(System.in);
@@ -30,8 +30,8 @@ public class Main {
             Double customsFee;
             Date manufacturedDate;
 
-
-            System.out.println("Common used or imported?:");
+            System.out.printf("Product #%d data:%n", i);
+            System.out.println("Common used or imported? (c/u/i/)");
             String selectproductType = scanner.next();
             switch (selectproductType) {
                 case "i":
@@ -43,14 +43,22 @@ public class Main {
                     price = scanner.nextDouble();
                     System.out.print("Customs fee:");
                     customsFee = scanner.nextDouble();
-
                     Product importedProduct = new ImportedProduct(name, price, customsFee);
                     productList.add(importedProduct);
-
                     break;
                 case "u":
-
+                    System.out.print("Name:");
+                    scanner.nextLine();
+                    name = scanner.nextLine();
+                    System.out.println();
+                    System.out.print("Price:");
+                    price = scanner.nextDouble();
+                    System.out.println("Manufactured date (DD/MM/YYYY)");
+                    manufacturedDate = sdf.parse(scanner.next());
+                    Product usedProduct = new UsedProduct(name, price, manufacturedDate);
+                    productList.add(usedProduct);
                     break;
+
                 case "c":
                     System.out.print("Name:");
                     scanner.nextLine();
