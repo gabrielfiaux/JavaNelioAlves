@@ -1,7 +1,8 @@
 package _1program.model.entites;
 
-import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 
 public class Reservation {
     private int roomNumber;
@@ -41,8 +42,27 @@ public class Reservation {
         this.checkout = checkout;
     }
 
-    public Duration duration(){
-        Duration duration = Duration.between(getCheckin(), getCheckout());
-        return duration;
+    public Period periodOfCheckin() {
+        LocalDate localDateCheckin = getCheckin().toLocalDate();
+        LocalDate localDateCheckout = getCheckout().toLocalDate();
+        Period period = Period.between(localDateCheckin, localDateCheckout);
+        return periodOfCheckin();
+    }
+
+    public int[] timeDifference() {
+        int days = periodOfCheckin().getDays();
+        int months = periodOfCheckin().getMonths();
+        int years = periodOfCheckin().getYears();
+        int[] date = {days, months, years};
+        return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "Room " + roomNumber +
+                ", checkin=" + checkin +
+                ", checkout=" + checkout +
+                '}';
     }
 }
