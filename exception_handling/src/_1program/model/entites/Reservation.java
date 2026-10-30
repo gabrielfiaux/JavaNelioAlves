@@ -1,68 +1,54 @@
 package _1program.model.entites;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Reservation {
-    private int roomNumber;
-    private LocalDateTime checkin;
-    private LocalDateTime checkout;
+    private Integer roomNumber;
+    private Date checkin;
+    private Date checkout;
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Reservation() {
-    }
-
-    public Reservation(int roomNumber, LocalDateTime checkin, LocalDateTime checkout) {
+    public Reservation(Integer roomNumber, Date checkin, Date checkout) {
         this.roomNumber = roomNumber;
         this.checkin = checkin;
         this.checkout = checkout;
     }
 
-    public int getRoomNumber() {
+    public Integer getRoomNumber() {
         return roomNumber;
     }
 
-    public void setRoomNumber(int roomNumber) {
+    public void setRoomNumber(Integer roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public LocalDateTime getCheckin() {
+    public Date getCheckin() {
         return checkin;
     }
 
-    public void setCheckin(LocalDateTime checkin) {
-        this.checkin = checkin;
-    }
 
-    public LocalDateTime getCheckout() {
+    public Date getCheckout() {
         return checkout;
     }
 
-    public void setCheckout(LocalDateTime checkout) {
+    public long duration() {
+        long diff = checkout.getTime() - checkin.getTime();
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+    }
+
+    public void updateDates(Date checkin, Date checkout) {
+        this.checkin = checkin;
         this.checkout = checkout;
-    }
-
-    public Period periodOfCheckin() {
-        LocalDate localDateCheckin = getCheckin().toLocalDate();
-        LocalDate localDateCheckout = getCheckout().toLocalDate();
-        Period period = Period.between(localDateCheckin, localDateCheckout);
-        return periodOfCheckin();
-    }
-
-    public int[] timeDifference() {
-        int days = periodOfCheckin().getDays();
-        int months = periodOfCheckin().getMonths();
-        int years = periodOfCheckin().getYears();
-        int[] date = {days, months, years};
-        return date;
     }
 
     @Override
     public String toString() {
-        return "Reservation{" +
-                "Room " + roomNumber +
-                ", checkin=" + checkin +
-                ", checkout=" + checkout +
-                '}';
+        return "Reservation: "
+                + "Room " + getRoomNumber() + ", "
+                + "check-in: " + sdf.format(checkin) + ", "
+                + "check-out: " + sdf.format(checkout) + ", "
+                + duration() + " nights";
     }
 }
