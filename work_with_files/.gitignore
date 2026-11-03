@@ -3,6 +3,9 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .kotlin
+src/terminal/files/**
+
+
 
 ### Eclipse ###
 .apt_generated
