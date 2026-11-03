@@ -61,10 +61,27 @@ public class Terminal {
         }
     }
 
+    public static void updateFile(String fileName){
+        try (FileWriter fileWriter = new FileWriter(fileName,true)){
+            System.out.print(": ");
+            Scanner scanner = new Scanner(System.in);
+            String content = scanner.nextLine();
+            fileWriter.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public static void overWritingFile(String fileName){
+        try (FileWriter fileWriter = new FileWriter(fileName)){
+            System.out.print(": ");
+            Scanner scanner = new Scanner(System.in);
+            String content = scanner.nextLine();
+            fileWriter.write(content);
+            System.out.println(fileWriter.toString() + "is Updateded");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-
-
-
-
-}
+}//
