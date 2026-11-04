@@ -1,4 +1,4 @@
-package i_O_Streams;
+package i_o_streams;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,10 +13,11 @@ public class Main2 {
             while ((i = input.read()) != -1) {
                 output.write(i);
             }
-            System.out.println("File copied successfully.");
+
 
         } catch (IOException e) {
             e.getStackTrace();
         }
+        System.out.println("File copied successfully.");
     }
 }

@@ -1,4 +1,4 @@
-package i_O_Streams;
+package i_o_streams;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,8 +6,7 @@ import java.io.IOException;
 public class Main {
     static void main(String[] args) {
         //declaração do file input com trywithrecurses
-        try (FileInputStream inputStream = new FileInputStream("C:\\Documentos\\cursos\\JavaNelioAlves\\work_with_files\\" +
-                "src\\files\\novo documento de texto.txt")) {
+        try (FileInputStream inputStream = new FileInputStream("C:\\Documentos\\cursos\\JavaNelioAlves\\work_with_files\\src\\files\\Captura de tela 2026-10-20 141733.png")) {
             //variavel de controle
             int i;
             while ((i = inputStream.read()) != -1) {
