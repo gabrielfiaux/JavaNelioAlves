@@ -1,9 +1,6 @@
 package terminal.services;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Terminal {
@@ -62,11 +59,13 @@ public class Terminal {
     }
 
     public static void updateFile(String fileName){
-        try (FileWriter fileWriter = new FileWriter(fileName,true)){
+        try (FileWriter fileWriter = new FileWriter(fileName,true);
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)){
             System.out.print(": ");
             Scanner scanner = new Scanner(System.in);
             String content = scanner.nextLine();
-            fileWriter.write(content);
+                bufferedWriter.newLine();
+            bufferedWriter.write(content);
         } catch (IOException e) {
             e.printStackTrace();
         }
