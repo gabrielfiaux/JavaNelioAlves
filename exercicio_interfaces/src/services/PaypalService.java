@@ -1,6 +1,6 @@
 package services;
 
-public class PaypalServices implements OnlinePaymentServices {
+public class PaypalService implements OnlinePaymentServices {
 
     private static final double FEE_PERCENTAGE = 0.02;
     private static final double MONTHLY_INTEREST = 0.01;

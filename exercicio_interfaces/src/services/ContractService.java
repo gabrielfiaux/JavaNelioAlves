@@ -1,14 +1,14 @@
 package services;
 
-import entites.Contract;
-import entites.Installment;
+import entities.Contract;
+import entities.Installment;
 
 import java.time.LocalDate;
 
-public class ContractServices {
+public class ContractService {
     private OnlinePaymentServices onlinePaymentServices;
 
-    public ContractServices(OnlinePaymentServices onlinePaymentServices) {
+    public ContractService(OnlinePaymentServices onlinePaymentServices) {
         this.onlinePaymentServices = onlinePaymentServices;
     }
 
